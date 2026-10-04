@@ -1,0 +1,7 @@
+/target
+# bot token
+.APIKEY
+# runtime files of bots
+*.log
+*.log.1
+downloadedFiles/
