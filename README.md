@@ -101,6 +101,9 @@ fn main() -> laser_tele::Result<()> {
 ```
 
 `api_url` points the bot to a [local Bot API server](https://github.com/tdlib/telegram-bot-api).
+Where Telegram is blocked, the server from [the fork with MTProxy support](https://github.com/NikolayUvarov/telegram-bot-api#mtproxy)
+connects to Telegram through MTProxy servers, checks them and switches to a working one;
+[examples/mtproxy_collector.rs](examples/mtproxy_collector.rs) collects such servers from channels for it.
 
 ## Updates
 
@@ -199,6 +202,7 @@ Complete bots in [examples/](examples), run them with `TG_API_KEY=... cargo run 
 | [business](examples/business.rs) | blocking | answering on behalf of a business account |
 | [several_bots](examples/several_bots.rs) | async | two bots in one program |
 | [channel](examples/channel.rs) | blocking | processing updates in several threads |
+| [mtproxy_collector](examples/mtproxy_collector.rs) | blocking | collecting MTProxy servers from channels for the Bot API server with MTProxy support |
 
 The API reference: `cargo doc --open`.
 
