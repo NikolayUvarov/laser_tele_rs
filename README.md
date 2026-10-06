@@ -170,6 +170,7 @@ Every request and response is written to a log file named after the function: `s
 | `GameMessage{ChatID, MessageID}` | `GameMessage::Chat { chat_id, message_id }` | the same |
 | `*APIError` | `Error::Api(ApiError)`, `err.api()` | the same |
 | `LogWithoutContent`, `LogFull`, `LogOff` | `LogMode::WithoutContent`, `Full`, `Off` | the same |
+| `Proxy`, `APIURL` | `Config::proxy`, `Config::api_url` | the same |
 | `LoadFile(chatID, fileID)` | `load_file(file_id)` | the same |
 
 Every other function has the same name in snake case: `SendPoll` is `send_poll`, `AnswerPreCheckoutQuery` is
@@ -178,7 +179,7 @@ Every other function has the same name in snake case: `SendPoll` is `send_poll`,
 - `init` and `run` return an error instead of stopping the program when the token is not found;
 - functions sending messages return the sent `Message`;
 - the library doesn't print to the standard output, only errors of requesting updates to the standard error;
-- additions: `Config::proxy`, `Config::api_url`, `Message::command()`, `Message::entity_text()`.
+- additions: `Message::command()`, `Message::entity_text()`.
 
 ## Examples
 
